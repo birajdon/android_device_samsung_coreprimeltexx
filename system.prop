@@ -1,5 +1,5 @@
 #
-# system.prop for e53g
+# system.prop for coreprimeltexx 
 #
 
 # ART
@@ -31,7 +31,6 @@ ro.use_data_netmgrd=false
 persist.data.netmgrd.qos.enable=false
 
 # Display
-ro.sf.lcd_density=320
 debug.composition.type=c2d
 persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196608

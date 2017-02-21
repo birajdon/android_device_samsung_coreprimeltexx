@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/e53g
+DEVICE_PATH := device/samsung/coreprimeltexx
 
 # Inherit from msm8916-common
 -include device/samsung/msm8916-common/BoardConfigCommon.mk
@@ -23,9 +23,8 @@ DEVICE_PATH := device/samsung/e53g
 TARGET_OTA_ASSERT_DEVICE := e53g,e5ltexx
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/e53g
-TARGET_KERNEL_CONFIG :=  cyanogen_e53g_defconfig
-TARGET_KERNEL_SELINUX_CONFIG := selinux_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/coreprimeltexx
+TARGET_KERNEL_CONFIG := lineageos_coreprimeltexx_defconfig
 
 # Partition Info
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
@@ -47,8 +46,9 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
+<<<<<<< HEAD
 RECOVERY_VARIANT := twrp
-DEVICE_RESOLUTION := 720x1280
+DEVICE_RESOLUTION := 480x800 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TW_HAS_DOWNLOAD_MODE := true
 TW_NO_REBOOT_BOOTLOADER := true

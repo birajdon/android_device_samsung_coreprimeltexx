@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_e53g.mk
+    $(LOCAL_DIR)/full_coreprimeltexx.mk

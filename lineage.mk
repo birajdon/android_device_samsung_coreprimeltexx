@@ -16,8 +16,8 @@
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
-$(call inherit-product, device/samsung/e53g/full_e53g.mk)
+$(call inherit-product, device/samsung/coreprimeltexx/full_coreprimeltexx.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := SM-E500H
-PRODUCT_NAME := cm_e53g
+PRODUCT_RELEASE_NAME := SM-G360F
+PRODUCT_NAME := cm_coreprimeltexx

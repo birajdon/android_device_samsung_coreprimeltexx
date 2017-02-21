@@ -14,7 +14,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),e53g)
+ifeq ($(TARGET_DEVICE),coreprimeltexx)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

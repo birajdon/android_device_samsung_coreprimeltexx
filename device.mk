@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-$(call inherit-product-if-exists, vendor/samsung/e53g/e53g-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/coreprimeltexx/coreprimeltexx-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -23,8 +23,8 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 480
+TARGET_SCREEN_WIDTH := 800
 
 # Permissions
 PRODUCT_COPY_FILES += \
