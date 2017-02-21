@@ -20,7 +20,7 @@ DEVICE_PATH := device/samsung/coreprimeltexx
 -include device/samsung/msm8916-common/BoardConfigCommon.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := e53g,e5ltexx
+TARGET_OTA_ASSERT_DEVICE := coreprimeltexx 
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/coreprimeltexx
