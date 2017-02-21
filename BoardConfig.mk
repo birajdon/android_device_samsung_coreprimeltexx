@@ -82,10 +82,5 @@ TARGET_GLOBAL_CPPFLAGS += -DANDROID_MULTI_SIM
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
-# Vendor Init
-TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := libinit_e53g
-TARGET_LIBINIT_DEFINES_FILE := libinit_e53g
-
 # Enable dex-preoptimization to speed up first boot sequence
 WITH_DEXPREOPT := true
