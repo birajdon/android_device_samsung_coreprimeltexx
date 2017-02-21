@@ -176,22 +176,22 @@ lib/libloc_core.so
 
 # Graphics
 
-egl/eglsubAndroid.so:vendor/lib/egl/eglsubAndroid.so
-egl/libEGL_adreno.so:vendor/lib/egl/libEGL_adreno.so
-egl/libGLESv1_CM_adreno.so:vendor/lib/egl/libGLESv1_CM_adreno.so
-egl/libGLESv2_adreno.so:vendor/lib/egl/libGLESv2_adreno.so
-egl/libq3dtools_adreno.so:vendor/lib/egl/libq3dtools_adreno.so
-libadreno_utils.so:vendor/lib/libadreno_utils.so
-libC2D2.so:vendor/lib/libC2D2.so
-libc2d30-a3xx.so:vendor/lib/libc2d30-a3xx.so
-libCB.so:vendor/lib/libCB.so
-libgsl.so:vendor/lib/libgsl.so
-libllvm-qcom.so:vendor/lib/libllvm-qcom.so
-libRSDriver_adreno.so:vendor/lib/libRSDriver_adreno.so
-librs_adreno.so:vendor/lib/librs_adreno.so
-librs_adreno_sha1.so:vendor/lib/librs_adreno_sha1.so
-libsc-a3xx.so:vendor/lib/libsc-a3xx.so
-libbccQTI.so:vendor/lib/libbccQTI.so
+egl/eglsubAndroid.so
+egl/libEGL_adreno.so
+egl/libGLESv1_CM_adreno.so
+egl/libGLESv2_adreno.so
+egl/libq3dtools_adreno.so
+libadreno_utils.so
+libC2D2.so
+libc2d30-a3xx.so
+libCB.so
+libgsl.so
+libllvm-qcom.so
+libRSDriver_adreno.so
+librs_adreno.so
+librs_adreno_sha1.so
+libsc-a3xx.so
+libbccQTI.so
 
 # Graphics firmware
 
