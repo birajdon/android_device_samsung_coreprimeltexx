@@ -13,11 +13,11 @@
 # limitations under the License.
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/coreprimeltexx/full_coreprimeltexx.mk)
 
 # Release name
 PRODUCT_RELEASE_NAME := SM-G360F
-PRODUCT_NAME := cm_coreprimeltexx
+PRODUCT_NAME := lineage_coreprimeltexx
