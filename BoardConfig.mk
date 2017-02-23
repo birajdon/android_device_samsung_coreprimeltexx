@@ -24,7 +24,7 @@ TARGET_OTA_ASSERT_DEVICE := coreprimeltexx
 
 # Kernel
 TARGET_ARCH               := arm
-TARGET_KERNEL_SOURCE      := kernel/samsung/coreprimeltexx
+TARGET_KERNEL_SOURCE      := kernel/samsung/msm8916
 TARGET_KERNEL_CONFIG      := lineageos_coreprimeltexx_defconfig
 BOARD_KERNEL_CMDLINE      += enforcing=0
 BOARD_KERNEL_PREBUILT_DT  := true
