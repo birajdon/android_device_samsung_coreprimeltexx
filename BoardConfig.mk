@@ -17,14 +17,19 @@
 DEVICE_PATH := device/samsung/coreprimeltexx
 
 # Inherit from msm8916-common
--include device/samsung/msm8916-common/BoardConfigCommon.mk
+include device/samsung/msm8916-common/BoardConfigCommon.mk
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := coreprimeltexx 
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/coreprimeltexx
-TARGET_KERNEL_CONFIG := lineageos_coreprimeltexx_defconfig
+TARGET_ARCH               := arm
+TARGET_KERNEL_SOURCE      := kernel/samsung/coreprimeltexx
+TARGET_KERNEL_CONFIG      := lineageos_coreprimeltexx_defconfig
+BOARD_KERNEL_CMDLINE      += enforcing=0
+BOARD_KERNEL_PREBUILT_DT  := true
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS      += --dt device/samsung/coreprimeltexx/dt.img
 
 # Partition Info
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
