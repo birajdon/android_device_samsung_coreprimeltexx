@@ -12,15 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
 
-# Inherit from coreprimeltexx device
-$(call inherit-product, device/samsung/coreprimeltexx/device.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
+
+# Inherit device configuration
+$(call inherit-product, $(LOCAL_PATH)/device.mk)
+
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    charger
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := coreprimeltexx
-PRODUCT_NAME := full_coreprimeltexx
+PRODUCT_NAME := omni_coreprimeltexx
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G360F
 PRODUCT_MANUFACTURER := samsung

@@ -14,22 +14,46 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/samsung/coreprimeltexx
+LOCAL_PATH := device/samsung/coreprimeltexx/ 
 
-# Inherit from msm8916-common
-include device/samsung/msm8916-common/BoardConfigCommon.mk
+# Platform
+TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := coreprimeltexx 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := MSM8916
+
+# Architecture
+TARGET_ARCH	      := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_CPU := cortex-a9
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT    := cortex-a53
+TARGET_CPU_CORTEX_A53 := true
+
+# Board CFLAGS
+arch_variant_cflags += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
-TARGET_ARCH               := arm
+KERNEL_TOOLCHAIN	  := $(PWD)/prebuilts/gcc/$(shell uname -s | tr "[:upper:]" "[:lower:]")-x86/$(TARGET_ARCH)/arm-linux-androideabi-4.9/bin
+KERNEL_TOOLCHAIN_PREFIX   := arm-linux-androideabi-
+
+TARGET_KERNEL_ARCH 	  := arm
+BOARD_DTBTOOL_ARG         := -2
+BOARD_KERNEL_BASE         := 0x80000000
+BOARD_KERNEL_CMDLINE      := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci androidboot.selinux=permissive
+BOARD_KERNEL_PAGESIZE     := 2048
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_TAGS_OFFSET  := 0x01E00000
+BOARD_RAMDISK_OFFSET      := 0x02000000
 TARGET_KERNEL_SOURCE      := kernel/samsung/msm8916
 TARGET_KERNEL_CONFIG      := lineageos_coreprimeltexx_defconfig
-BOARD_KERNEL_CMDLINE      += enforcing=0
 BOARD_KERNEL_PREBUILT_DT  := true
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS      += --dt device/samsung/coreprimeltexx/dt.img
+BOARD_MKBOOTIMG_ARGS      := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --dt device/samsung/coreprimeltexx/dt.img
 
 # Partition Info
 BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
@@ -44,6 +68,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Recovery
+TARGET_RECOVERY_FSTAB := device/samsung/coreprimeltexx/twrp.fstab
 BOARD_USES_MMC_UTILS := true
 BOARD_HAS_NO_MISC_PARTITION := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -51,7 +76,6 @@ RECOVERY_GRAPHICS_USE_LINELENGTH := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 # TWRP
-#RECOVERY_VARIANT := twrp
 DEVICE_RESOLUTION := 480x800 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 TW_HAS_DOWNLOAD_MODE := true
@@ -67,25 +91,3 @@ TW_MTP_DEVICE := /dev/mtp_usb
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_CRYPTO := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-#COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-
-# E5 RIL class
-BOARD_RIL_CLASS := ../../../device/samsung/e53g/ril/
-
-# Audio
-AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
-AUDIO_FEATURE_SAMSUNG_DUAL_SIM := true
-
-# Radio
-SIM_COUNT := 2
-TARGET_GLOBAL_CFLAGS += -DANDROID_MULTI_SIM
-TARGET_GLOBAL_CPPFLAGS += -DANDROID_MULTI_SIM
-
-# ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
-
-# Enable dex-preoptimization to speed up first boot sequence
-WITH_DEXPREOPT := true

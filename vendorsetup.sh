@@ -1,2 +1,2 @@
-add_lunch_combo lineage_coreprimeltexx-eng
-add_lunch_combo lineage_coreprimeltexx-userdebug
+add_lunch_combo omni_coreprimeltexx-eng
+add_lunch_combo omni_coreprimeltexx-userdebug

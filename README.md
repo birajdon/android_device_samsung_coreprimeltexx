@@ -1,5 +1,7 @@
-Device configuration for Samsung Galaxy Coreprime LTE (coreprimeltexx G360F)
+TWRP Device configuration for Samsung Galaxy Coreprime LTE (coreprimeltexx G360F)
 ==================================================
+
+Minimal device tree to build TWRP recovery using OmniROM 7.1 sources
 
 Basic   | Spec Sheet
 -------:|:-------------------------
