@@ -60,7 +60,7 @@ TW_THEME                := portrait_mdpi
 TW_HAS_DOWNLOAD_MODE    := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_NO_USB_STORAGE       := true
-TW_BRIGHTNESS_PATH      := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.135/leds/lcd-backlight/brightness"
+TW_BRIGHTNESS_PATH      := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.133/leds/lcd-backlight/brightness"
 TW_MTP_DEVICE           := /dev/mtp_usb_gadget
 
 # Bluetooth
