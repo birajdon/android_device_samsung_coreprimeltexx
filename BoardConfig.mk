@@ -44,7 +44,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Recovery
-TARGET_RECOVERY_FSTAB            := device/samsung/coreprimeltexx/twrp.fstab
+TARGET_RECOVERY_FSTAB            := device/samsung/coreprimeltexx/recovery/twrp.fstab
 BOARD_USES_MMC_UTILS             := true
 BOARD_HAS_NO_MISC_PARTITION      := true
 BOARD_HAA_NO_REAL_SDCARD	 := true
