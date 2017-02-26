@@ -19,6 +19,10 @@ DEVICE_PATH := device/samsung/coreprimeltexx
 # Inherit from msm8916-common
 include device/samsung/msm8916-common/BoardConfigCommon.mk
 
+# Board / SoC
+BOARD_VENDOR          := samsung
+TARGET_BOARD_PLATFORM := msm8916
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := coreprimeltexx 
 
