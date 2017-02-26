@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015 The CyanogenMod Project
+# Copyright (C) 2017 The MSM8916-Samsung Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,29 +17,30 @@
 LOCAL_PATH := device/samsung/coreprimeltexx/ 
 
 # Platform
-TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOARD_PLATFORM     := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8916
+TARGET_NO_BOOTLOADER         := true
 
 # Architecture
-TARGET_ARCH	      := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH	        := arm
+TARGET_ARCH_VARIANT     := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_SMP := true
-TARGET_CPU_VARIANT := cortex-a7
-TARGET_CPU_VARIANT    := cortex-a53
-TARGET_CPU_CORTEX_A53 := true
+TARGET_CPU_ABI          := armeabi-v7a
+TARGET_CPU_ABI2         := armeabi
+TARGET_CPU_SMP          := true
+TARGET_CPU_VARIANT      := cortex-a7
+TARGET_CPU_VARIANT      := cortex-a53
+TARGET_CPU_CORTEX_A53   := true
 
 # Board CFLAGS
 arch_variant_cflags += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
-KERNEL_TOOLCHAIN	  := $(PWD)/prebuilts/gcc/$(shell uname -s | tr "[:upper:]" "[:lower:]")-x86/$(TARGET_ARCH)/arm-linux-androideabi-4.9/bin
-KERNEL_TOOLCHAIN_PREFIX   := arm-linux-androideabi-
+KERNEL_TOOLCHAIN	  := $(PWD)/prebuilts/gcc/$(shell uname -s | tr "[:upper:]" "[:lower:]")-x86/$(TARGET_ARCH)/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX   := arm-eabi-
 
 TARGET_KERNEL_ARCH 	  := arm
 BOARD_DTBTOOL_ARG         := -2
@@ -53,41 +54,37 @@ TARGET_KERNEL_SOURCE      := kernel/samsung/msm8916
 TARGET_KERNEL_CONFIG      := lineageos_coreprimeltexx_defconfig
 BOARD_KERNEL_PREBUILT_DT  := true
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS      := --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000 --dt device/samsung/coreprimeltexx/dt.img
+BOARD_MKBOOTIMG_ARGS      := --dt device/samsung/coreprimeltexx/dt.img
 
 # Partition Info
-BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 13631488
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2437393940
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 2437393940
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12444667740
-BOARD_CACHEIMAGE_PARTITION_SIZE := 202375168
-BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 202375168
+BOARD_FLASH_BLOCK_SIZE             := 131072
+BOARD_VOLD_EMMC_SHARES_DEV_MAJOR   := true
 
 # File System
-TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_EXT4        := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/samsung/coreprimeltexx/twrp.fstab
-BOARD_USES_MMC_UTILS := true
-BOARD_HAS_NO_MISC_PARTITION := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_FSTAB            := device/samsung/coreprimeltexx/twrp.fstab
+BOARD_USES_MMC_UTILS             := true
+BOARD_HAS_NO_MISC_PARTITION      := true
+BOARD_HAA_NO_REAL_SDCARD	 := true
+TARGET_RECOVERY_QCOM_RTC_FIX     := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-BOARD_HAS_NO_SELECT_BUTTON := true
+RECOVERY_SDCARD_ON_DATA          := true
+BOARD_HAS_NO_SELECT_BUTTON       := true
+TARGET_RECOVERY_PIXEL_FORMAT     := "RGB_565"
+BOARD_SUPRESS_SECURE_ERASE       := true
 
 # TWRP
-DEVICE_RESOLUTION := 480x800 
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TW_HAS_DOWNLOAD_MODE := true
+TW_THEME                := portrait_mdpi
+TW_HAS_DOWNLOAD_MODE    := true
 TW_NO_REBOOT_BOOTLOADER := true
-TW_NEW_ION_HEAP := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_BRIGHTNESS_PATH := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.135/leds/lcd-backlight/brightness"
-TW_INTERNAL_STORAGE_PATH := "/data/media/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/storage/extSdCard"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_MTP_DEVICE := /dev/mtp_usb
-RECOVERY_SDCARD_ON_DATA := true
-TW_INCLUDE_CRYPTO := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+TW_NO_USB_STORAGE       := true
+TW_BRIGHTNESS_PATH      := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.135/leds/lcd-backlight/brightness"
+TW_MTP_DEVICE           := /dev/mtp_usb_gadget
