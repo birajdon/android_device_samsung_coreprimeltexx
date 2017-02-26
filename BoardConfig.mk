@@ -44,30 +44,24 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Recovery
-BOARD_USES_MMC_UTILS := true
-BOARD_HAS_NO_MISC_PARTITION := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_FSTAB            := device/samsung/coreprimeltexx/twrp.fstab
+BOARD_USES_MMC_UTILS             := true
+BOARD_HAS_NO_MISC_PARTITION      := true
+BOARD_HAA_NO_REAL_SDCARD	 := true
+TARGET_RECOVERY_QCOM_RTC_FIX     := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-BOARD_HAS_NO_SELECT_BUTTON := true
+RECOVERY_SDCARD_ON_DATA          := true
+BOARD_HAS_NO_SELECT_BUTTON       := true
+TARGET_RECOVERY_PIXEL_FORMAT     := "RGB_565"
+BOARD_SUPRESS_SECURE_ERASE       := true
 
 # TWRP
-#RECOVERY_VARIANT := twrp
-DEVICE_RESOLUTION := 480x800 
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TW_HAS_DOWNLOAD_MODE := true
+TW_THEME                := portrait_mdpi
+TW_HAS_DOWNLOAD_MODE    := true
 TW_NO_REBOOT_BOOTLOADER := true
-TW_NEW_ION_HEAP := true
-TW_TARGET_USES_QCOM_BSP := true
-TW_BRIGHTNESS_PATH := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.135/leds/lcd-backlight/brightness"
-TW_INTERNAL_STORAGE_PATH := "/data/media/0"
-TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/storage/extSdCard"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_MTP_DEVICE := /dev/mtp_usb
-RECOVERY_SDCARD_ON_DATA := true
-TW_INCLUDE_CRYPTO := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
-#COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+TW_NO_USB_STORAGE       := true
+TW_BRIGHTNESS_PATH      := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.135/leds/lcd-backlight/brightness"
+TW_MTP_DEVICE           := /dev/mtp_usb_gadget
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
