@@ -305,6 +305,6 @@ etc/firmware/Signedrompatch_v20.bin
 
 ## Time services
 bin/time_daemon
-vendor/lib/libtime_genoff.so
+#vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
 lib/libcommon_time_client.so
