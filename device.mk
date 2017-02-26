@@ -71,10 +71,6 @@ PRODUCT_PACKAGES += \
    com.dsi.ant.antradio_library \
    libantradio
 
-# libril_shim
-PRODUCT_PACKAGES += \
-    libril_shim
-
 # Set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
