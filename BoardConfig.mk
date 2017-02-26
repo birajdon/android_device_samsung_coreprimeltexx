@@ -28,7 +28,6 @@ TARGET_KERNEL_SOURCE      := kernel/samsung/msm8916
 TARGET_KERNEL_CONFIG      := lineageos_coreprimeltexx_defconfig
 BOARD_KERNEL_CMDLINE      += enforcing=0
 BOARD_KERNEL_PREBUILT_DT  := true
-BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS      += --dt device/samsung/coreprimeltexx/dt.img
 
 # Partition Info
