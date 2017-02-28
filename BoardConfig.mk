@@ -65,11 +65,6 @@ TW_NO_USB_STORAGE       := true
 TW_BRIGHTNESS_PATH      := "/sys/devices/soc.0/1a00000.qcom\x2cmdss_mdp/qcom\x2cmdss_fb_primary.133/leds/lcd-backlight/brightness"
 TW_MTP_DEVICE           := /dev/mtp_usb_gadget
 
-ifeq ($(RECOVERY_VARIANT), twrp)
-TARGET_RECOVERY_FSTAB   := device/samsung/coreprimeltexx/recovery/twrp.fstab # Use TWRP fstab
-endif
-
-
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
