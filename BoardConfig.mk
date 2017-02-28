@@ -57,7 +57,7 @@ TARGET_RECOVERY_PIXEL_FORMAT     := "RGB_565"
 BOARD_SUPRESS_SECURE_ERASE       := true
 
 # TWRP
-# TARGET_RECOVERY_FSTAB := twrp <- Activate to build TWRP
+# TARGET_RECOVERY       := twrp <- Activate to build TWRP
 TW_THEME                := portrait_mdpi
 TW_HAS_DOWNLOAD_MODE    := true
 TW_NO_REBOOT_BOOTLOADER := true
