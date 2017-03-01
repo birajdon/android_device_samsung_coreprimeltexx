@@ -114,6 +114,7 @@ vendor/lib/libqomx_jpegenc.so
 lib/libaec_algo_front.so
 lib/libaec_algo_rear.so
 lib/libaf_algo_rear.so
+lib/libawb_algo_front.so
 #lib/libawb_algo_front_al.so
 lib/libawb_algo_rear_al.so
 #vendor/lib/libchromatix_s5k5e3yx_wide_pip.so
@@ -176,16 +177,16 @@ lib/libloc_core.so
 
 ## Graphics
 
-#egl/eglsubAndroid.so
-#egl/libEGL_adreno.so
-#egl/libGLESv1_CM_adreno.so
-#egl/libGLESv2_adreno.so
-#egl/libq3dtools_adreno.so
-#libadreno_utils.so
+vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/libadreno_utils.so
 #libC2D2.so
 #libc2d30-a3xx.so
 #libCB.so
-#libgsl.so
+vendor/lib/libgsl.so
 #libllvm-qcom.so
 #libRSDriver_adreno.so
 #librs_adreno.so
